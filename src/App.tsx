@@ -1,74 +1,48 @@
-import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  useLocation,
-  Switch,
-  Route,
-  useParams
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, useLocation, Route } from "react-router-dom";
+import Tool from "./Tool";
 
-function useQuery() {
+const useQuery = () => {
   return new URLSearchParams(useLocation().search);
-}
+};
+
+// App args definitions
+const URL_ARGS: any = { remoteUrl: "dataset.csv" };
 
 /**
- * route to sample path and support sampleId
+ * entry point
  */
 export default () => {
   return (
     <>
       <Router basename="/">
         {/* <Route path="/" component={App} /> */}
-        <Switch>
-          <Route exact path="/">
-            <Start />
-          </Route>
-          {/* <LoadSample sample={sample} /> */}
-          {/* <Route exact path="/:sample" component={LoadSample} />
+        {/* <Switch> */}
+        <Route exact path="/">
+          <Begin />
+        </Route>
+        {/* <LoadSample sample={sample} /> */}
+        {/* <Route exact path="/:sample" component={LoadSample} />
           <Route path="/:sample/:caseId" component={LoadSample} /> */}
-        </Switch>
+        {/* </Switch> */}
       </Router>
     </>
   );
 };
 
 /**
- * Load a specific sample
- * @param param0
+ * Launch app
  */
-export const Start = ({ match }: any) => {
-  const [data, setData] = useState("placeholder");
-
-  // const setSample = useSampleStates(state => state.setSample);
-  // let name = match.params.sample;
+const Begin = ({ match }: any) => {
   let query = useQuery();
-  // let { caseId } = useParams();
-  // preload argument list from sample declaration
-  const urlArgs: any = { remoteUrl: "dataset.csv" };
-  // + fill from url provided params
-  Object.keys(urlArgs).forEach((argName: string) => {
+
+  // check for provided url params to prefill app args
+  Object.keys(URL_ARGS).forEach((argName: string) => {
     const urlArgVal = query.get(argName);
-    if (urlArgVal && urlArgVal !== "") urlArgs[argName] = urlArgVal;
-  });
-  useEffect(() => {
-    (async () => {
-      const remoteFileData: any = await fetchRemoteUrl(urlArgs.remoteUrl);
-      setData(remoteFileData);
-    })();
+    if (urlArgVal && urlArgVal !== "") URL_ARGS[argName] = urlArgVal;
   });
 
-  // sample.type = item.tags[0];
-  return <>{data}</>;
-};
+  const args = { ...URL_ARGS };
 
-export const fetchRemoteUrl = async (url: string) => {
-  console.log("fetching " + url);
-  const opt: RequestInit = { mode: "cors" };
-  try {
-    let response = await fetch(url, opt);
-    let txt = await response.text();
-    return txt;
-  } catch (e) {
-    console.log(e);
-  }
+  return <Tool args={args} />;
 };
