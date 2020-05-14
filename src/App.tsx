@@ -44,12 +44,11 @@ export const Start = ({ match }: any) => {
   let query = useQuery();
   // let { caseId } = useParams();
   // preload argument list from sample declaration
-  const urlArgs: any = { remoteUrl: "" };
+  const urlArgs: any = { remoteUrl: "dataset.csv" };
   // + fill from url provided params
   Object.keys(urlArgs).forEach((argName: string) => {
     const urlArgVal = query.get(argName);
-    if (urlArgVal !== undefined && urlArgVal !== "")
-      urlArgs[argName] = urlArgVal;
+    if (urlArgVal && urlArgVal !== "") urlArgs[argName] = urlArgVal;
   });
   useEffect(() => {
     (async () => {
