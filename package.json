@@ -1,7 +1,7 @@
 {
-  "name": "minimal-sb",
+  "name": "minimal-sandbox",
   "version": "1.0.0",
-  "description": "",
+  "description": "starting point to make various tools supporting customization through args passed from URL parameters",
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {

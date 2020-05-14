@@ -17,6 +17,5 @@ export default ({ args }: any) => {
 
 const CsvGrapher = ({ data }: any) => {
   console.log(data);
-  data = "toto";
   return <>{data}</>;
 };
