@@ -4,11 +4,11 @@ Start your own sandbox forking this template: https://codesandbox.io/s/github/et
 
 See concept in wiki architecture: [principle]
 
-All those samples inherits from the sandbox template:
+## Samples created from this sandbox template
 
-## Configurator
+### Configurator
 - [sample listing]()
-## Standalone Tools
+### Standalone Tools
 - [csv grapher](https://lfv68.csb.app/)
 - [heighmap generator]()
 - [model loader]()
