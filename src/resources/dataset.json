@@ -1,0 +1,52 @@
+[
+  {
+    "key": "voltage",
+    "values": [
+      {
+        "date": 0,
+        "value": 121
+      },
+      {
+        "date": 2,
+        "value": 111
+      },
+      {
+        "date": 5,
+        "value": 91
+      },
+      {
+        "date": 7,
+        "value": 111
+      },
+      {
+        "date": 10,
+        "value": 150
+      }
+    ]
+  },
+  {
+    "key": "current",
+    "values": [
+      {
+        "date": 0,
+        "value": 215
+      },
+      {
+        "date": 3,
+        "value": 190
+      },
+      {
+        "date": 6,
+        "value": 105
+      },
+      {
+        "date": 8,
+        "value": 220
+      },
+      {
+        "date": 10,
+        "value": 140
+      }
+    ]
+  }
+]

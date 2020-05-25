@@ -1,13 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, useLocation, Route } from "react-router-dom";
-import Tool from "./Tool";
+import GraphTool from "./GraphTool";
+import "./styles.css";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
 
 // App args definitions
-const URL_ARGS: any = { remoteUrl: "dataset.csv" };
+const URL_ARGS: any = {
+  remoteUrl: "sample.csv",
+  fields: "time, current, voltage"
+};
 
 /**
  * entry point
@@ -19,7 +23,7 @@ export default () => {
         {/* <Route path="/" component={App} /> */}
         {/* <Switch> */}
         <Route exact path="/">
-          <Begin />
+          <ProcessArgs />
         </Route>
         {/* <LoadSample sample={sample} /> */}
         {/* <Route exact path="/:sample" component={LoadSample} />
@@ -33,7 +37,7 @@ export default () => {
 /**
  * Launch app
  */
-const Begin = ({ match }: any) => {
+const ProcessArgs = ({ match }: any) => {
   let query = useQuery();
 
   // check for provided url params to prefill app args
@@ -44,5 +48,5 @@ const Begin = ({ match }: any) => {
 
   const args = { ...URL_ARGS };
 
-  return <Tool args={args} />;
+  return <GraphTool args={args} />;
 };
