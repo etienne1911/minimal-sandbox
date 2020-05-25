@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, useLocation, Route } from "react-router-dom";
-import Tool from "./Tool";
+import GraphTool from "./GraphTool";
 import "./styles.css";
 
 const useQuery = () => {
@@ -9,7 +9,8 @@ const useQuery = () => {
 
 // App args definitions
 const URL_ARGS: any = {
-  remoteUrl: "sample.csv"
+  remoteUrl: "sample.csv",
+  fields: "time, current, voltage"
 };
 
 /**
@@ -47,5 +48,5 @@ const ProcessArgs = ({ match }: any) => {
 
   const args = { ...URL_ARGS };
 
-  return <Tool args={args} />;
+  return <GraphTool args={args} />;
 };
