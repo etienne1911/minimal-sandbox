@@ -1,17 +1,28 @@
 # minimal-sandbox
 
-Start your own sandbox forking this template: https://codesandbox.io/s/github/etienne1911/minimal-sandbox
+A set of tools built on the same pattern and using React with Typescript + Router
 
-See concept in wiki architecture: [principle]
+Handle url parameters to pass them to tool's arguments.
 
-## Samples created from this sandbox template
+Each tool defines its own arguments list.
+
+Build a new tool sandbox forking this template: https://codesandbox.io/s/github/etienne1911/minimal-sandbox
+
+See more about the concept in wiki architecture: [principle]
+
+## Examples
+
+this set built on sandbox pattern demonstrates some usecase.
 
 ### Configurator
-- [sample listing](): list multiple 3D demos
-- [graph monitor](): configure multiple instances of csvgrapher to show various graphes
-- [models viewer](): preload model loader tool with custom remote models
+this only serve the purpose of listing a set of preconfigured tools.
+
+- [graph monitor](): show various graphes using csvgrapher tool
+- [models viewer](): show custom remote models using modelloader tool
+- [sample listing](): link to various 3D demo samples
 
 ### Standalone Tools
-- [csv grapher](https://lfv68.csb.app/)
-- [heighmap generator](): a tool to generate heighmap from various heigh functions
-- [model loader](): a tool to display model
+- [csv grapher](https://lfv68.csb.app/): simple graph tool
+- [model loader](): 3d model display
+- [heighmap generator](): a tool to generate heighmaps from various functions
+
