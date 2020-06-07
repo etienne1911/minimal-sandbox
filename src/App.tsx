@@ -9,7 +9,7 @@ const useQuery = () => {
 
 // App args definitions
 const URL_ARGS: any = {
-  remoteUrl: "sample.csv"
+  remoteUrl: "sample.txt"
 };
 
 /**
