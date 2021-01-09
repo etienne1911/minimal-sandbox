@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, useLocation, Route } from "react-router-dom";
 import Tool from "./Tool";
-import "./styles.css";
+import "./App.css";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);

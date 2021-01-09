@@ -27,7 +27,7 @@ export default ({ args }: any) => {
   );
 };
 
-FileLoadHelper = ({ fileUrl }: any) => {
+const FileLoadHelper = ({ fileUrl }: any) => {
   const [data, setData] = useState("no url provided");
 
   useEffect(() => {
